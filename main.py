@@ -72,14 +72,14 @@ test_get_longest_same_div_count()
 def solve2(lst):
     print(
         f"cea mai lunga secventa in care toate elementele au acelasi nr de divizori este:{get_longest_same_div_count(lst)}")
-    def get_longest_product_is_odd(lst: list[int]):
-        lg=len(lst)
-        secvmax, start, end = 0, 0, 0 #declaram secventa maxima, indicii de inceput si final toate inital fiind 0
+def get_longest_product_is_odd(lst: list[int]):
+    lg=len(lst)
+    secvmax, start, end = 0, 0, 0 #declaram secventa maxima, indicii de inceput si final toate inital fiind 0
 
-        for i in range (0, lg):
-            st = i
-            dr = i
-            produs = lst[i]
+    for i in range (0, lg):
+        st = i
+        dr = i
+        produs = lst[i]
         for j in range (i, lg):
             produs = produs * lst[j]
             if produs % 2 == 1:
@@ -91,10 +91,11 @@ def solve2(lst):
         listprodusimpar = lst[start : end + 1]
         return listprodusimpar
 
-def test_get_longest_product_is_odd():
-    assert test_get_longest_product_is_odd([1, 2, 3, 4, 5]) == [1]
+def test_get_longest_product_is_odd(l):
+    assert test_get_longest_product_is_odd([1, 2, 4, 3, 5]) == [1]
     assert test_get_longest_product_is_odd([1, 6, 7, 9]) == [7, 9]
     assert test_get_longest_product_is_odd([11, 22, 16]) == [11]
+
 def solve3(lst: list[int]):
     print(
         f"cea mai lunga secventa in care toate elementele au acelasi nr de divizori este:{test_get_longest_product_is_odd(lst)}")
@@ -119,9 +120,8 @@ def solve3(lst: list[int]):
                 print("Rezolvati problema 3: Cea mai lunga secventa care are produsul elementelor nr impar: ")
                 solve3(lst)
             elif nr == "x":
-                shouldRun =False
-
+                shouldRun = False
             else:
                 print("Ati ales optiunea gresita! Reincercati! ")
-  if _name_ == "_main_":
+if _name_ == "_main_":
         main()
